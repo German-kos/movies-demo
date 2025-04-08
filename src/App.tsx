@@ -1,8 +1,14 @@
+import { Link, Outlet } from "react-router";
+
 function App() {
   return (
-    <>
-      <div>Hello World!</div>
-    </>
+    <div>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/movies">Movies</Link>
+      </nav>
+      <hr />
+      <Outlet />
+    </div>
   );
 }
 
