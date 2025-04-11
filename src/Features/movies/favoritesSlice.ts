@@ -1,23 +1,26 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Movie } from "../../types/movie";
 
 interface FavoritesState {
-  ids: number[];
+  movies: Movie[];
 }
 
 const initialState: FavoritesState = {
-  ids: [],
+  movies: [],
 };
 
 const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    toggleFavorite(state, action: PayloadAction<number>) {
-      const id = action.payload;
-      if (state.ids.includes(id)) {
-        state.ids = state.ids.filter((favId) => favId !== id);
+    toggleFavorite(state, action: PayloadAction<Movie>) {
+      const movie = action.payload;
+      const exists = state.movies.find((m) => m.id === movie.id);
+
+      if (exists) {
+        state.movies = state.movies.filter((m) => m.id !== movie.id);
       } else {
-        state.ids.push(id);
+        state.movies.push(movie);
       }
     },
   },

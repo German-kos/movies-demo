@@ -2,15 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "./favoritesSlice";
 import { RootState } from "../../app/store";
 import { useLoaderData } from "react-router";
+import { Movie } from "../../types/movie";
 
 export default function MoviesPage() {
-  const movies = useLoaderData() as {
-    id: number;
-    title: string;
-    poster_path: string;
-  }[];
+  const movies = useLoaderData() as Movie[];
 
-  const favorites = useSelector((state: RootState) => state.favorites.ids);
+  const favorites = useSelector((state: RootState) => state.favorites.movies);
   const dispatch = useDispatch();
 
   return (
@@ -24,8 +21,8 @@ export default function MoviesPage() {
               alt={movie.title}
             />
             <p>{movie.title}</p>
-            <button onClick={() => dispatch(toggleFavorite(movie.id))}>
-              {favorites.includes(movie.id) ? "★ Favorited" : "☆ Favorite"}
+            <button onClick={() => dispatch(toggleFavorite(movie))}>
+              {favorites.includes(movie) ? "★ Favorited" : "☆ Favorite"}
             </button>
           </li>
         ))}
