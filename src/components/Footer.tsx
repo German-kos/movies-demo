@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="bg-white mt-12 py-4 border-gray-300 border-t text-gray-500 text-sm text-center">
+    <footer className="bg-white mt-auto py-6 border-gray-300 border-t text-gray-500 text-sm text-center">
       <p>
         Made using <span className="font-medium text-blue-600">React</span>,{" "}
         <span className="font-medium text-purple-600">Redux Toolkit</span>, and{" "}

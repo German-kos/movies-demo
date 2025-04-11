@@ -10,7 +10,7 @@ export default function FavoritesPage() {
 
   if (favorites.length === 0) {
     return (
-      <div className="py-16 text-center">
+      <div className="py-16 min-h-[calc(100vh-200px)] text-center">
         <h2 className="mb-4 font-semibold text-xl">No favorites yet</h2>
         <p className="text-gray-500">Go to the Movies page and add some!</p>
         <div className="space-x-4 py-6">
@@ -32,7 +32,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="mx-auto px-4 py-8 max-w-4xl">
+    <div className="mx-auto px-4 py-8 max-w-4xl min-h-[calc(100vh-200px)]">
       <h2 className="mb-6 font-semibold text-2xl text-center">
         Your Favorites
       </h2>
