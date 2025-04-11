@@ -1,18 +1,15 @@
-import { useSelector } from "react-redux";
-import { Link, Outlet } from "react-router";
-import { RootState } from "./app/store";
+import { Outlet } from "react-router";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 function App() {
-  const favorites = useSelector((state: RootState) => state.favorites.movies);
-
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/movies">Movies</Link> |{" "}
-        <Link to="/favorites">Favorites{` (${favorites.length})`}</Link>
-      </nav>
-      <hr />
-      <Outlet />
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="px-4 py-6">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }
