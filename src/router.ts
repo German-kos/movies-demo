@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
-import { HomePage } from "./Features/home/HomePage";
+import { HomePage } from "./features/home/HomePage";
 import App from "./App";
-import { loadMovies } from "./Features/movies/loader";
-import MoviesPage from "./Features/movies/MoviesPage";
-import FavoritesPage from "./Features/movies/FavoritesPage";
+import { loadMovies } from "./features/movies/loader";
+import MoviesPage from "./features/movies/MoviesPage";
+import FavoritesPage from "./features/movies/FavoritesPage";
 
 export const router = createBrowserRouter([
   {
