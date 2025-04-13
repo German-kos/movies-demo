@@ -1,3 +1,3 @@
 export * from "./home";
-export * from "./about";
+export { Component as About } from "./about";
 export * from "./movies";
