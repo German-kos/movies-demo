@@ -14,19 +14,25 @@ export const Navbar = () => {
           Home
         </Link>
         <Link
-          to="/movies"
+          to="/movies/popular"
           className="text-gray-700 hover:text-blue-600 transition"
         >
-          Movies
+          Popular Movies
         </Link>
         <Link
-          to="/favorites"
+          to="/movies/favorites"
           className="relative text-gray-700 hover:text-blue-600 transition"
         >
           Favorites
           <span className="inline-block bg-yellow-300 ml-2 px-2 py-0.5 rounded-full text-black text-xs">
             {favoritesCount}
           </span>
+        </Link>
+        <Link
+          to="/About"
+          className="relative text-gray-700 hover:text-blue-600 transition"
+        >
+          About
         </Link>
       </div>
     </nav>

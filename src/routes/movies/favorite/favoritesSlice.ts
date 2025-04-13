@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Movie } from "../../types/movie";
+import { Movie } from "../../../types/movie";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
 
 interface FavoritesState {
   movies: Movie[];
@@ -28,3 +30,6 @@ const favoritesSlice = createSlice({
 
 export const { toggleFavorite } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;
+export const useFavorites = () => {
+  return useSelector((state: RootState) => state.favorites.movies);
+};

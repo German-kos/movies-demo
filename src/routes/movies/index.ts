@@ -7,7 +7,7 @@ export const moviesRoutes = [
     children: [popularRoute],
   },
   {
-    path: "favorite",
+    path: "favorites",
     children: [favoriteRoute],
   },
 ];
